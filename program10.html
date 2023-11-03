@@ -1,0 +1,36 @@
+<html >
+<head>
+<title> USN validator </title>
+
+<script> 
+
+function formValidator()
+{
+	var usn = document.getElementById('usnFrm').value;
+	usnExp=/[1-4][A-Z][A-Z]\d{2}[A-Z][A-Z]\d{3}/
+
+	if(usn.length==0)
+	{
+		alert("USN is empty."); 
+	}
+
+	else if(usn.match(usnExp))
+	{
+		alert("USN: "+usn+" is in correct format");
+	}
+	else
+	{
+		alert("USN should be in this format, eg.,1GD10CS001"); 
+	}
+}
+</script>
+</head>
+
+<body>
+	<form onSubmit = "formValidator()">
+		Enter your USN:<input type="text" id="usnFrm"/>
+	<br />
+	<input type ="submit" />
+	</form> 
+</body>
+</html>

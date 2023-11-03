@@ -1,0 +1,38 @@
+<HTML>
+<body>
+<title>FIBONACCI SEQUENCE</title>
+
+<script>
+
+var first=0, second=1, third=0, i;
+var num=prompt("Enter the number: ");
+
+if(num!=null && num>0)
+{
+	document.write("<h1> FIBONACCI NUMBER IS...</h1><br/>");
+	
+	if(num==1)
+		document.write("<h1>"+first+"</h1>");
+	else if(num==2)
+		document.write("<h1>"+first+"<br/>"+second+"</h1>");
+	else if(num>=3)
+	{
+		document.write("<h1>"+first+"<br/>"+second+"</h1>");
+		for(i=3; i<=num; i++)
+		{
+			third= first+second;
+			document.write("<h1>"+third+"<br/></h1>");
+			first=second;
+			second=third;
+		}
+	}
+}
+else
+	alert("Wrong input");
+
+</script>
+
+
+</body>
+</html>
+

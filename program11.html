@@ -1,0 +1,55 @@
+<html>
+<head> Stack Ordering
+    <title>Stack Ordering</title>
+      
+        <style type="text/css">
+            #layer1
+                {
+                    background-color:yellow;
+                    position:absolute;
+                    top:80px;
+                    left:200px;
+                    z-index:0;
+                }
+            #layer2
+                {
+                   background-color:red;                
+                    position:absolute;
+                    top:120px;
+                    left:220px;
+                    z-index:0;
+                }
+            #layer3
+                {               
+                    background-color:blue;
+                    position:absolute;
+                    top:180px;
+                    left:240px;
+                    z-index:0;
+                }
+          p
+                {
+                    border:solid thick black;
+                    background-color:green;
+                    padding:10px;
+                    width:300px;
+                    height:200px;                   
+                }
+        </style>
+</head>
+    <body>
+        <script>
+            var oldtop="layer3";
+            function mover(newTop)
+                {
+      		 document.getElementById(oldtop).style.zIndex="0";
+        	document.getElementById(newTop).style.zIndex="10";
+            	oldtop=newTop;
+                }
+        </script>
+        <p id=layer1 onMouseOver=mover('layer1') onMouseOut=mover('layer3')>This is the first layer</p>
+        <p id=layer2 onMouseOver=mover('layer2') onMouseOut=mover('layer3')>This is the second layer</p>
+        <p id=layer3 onMouseOver=mover('layer3') onMouseOut=mover('layer3')>This is the third layer</p>
+        
+    </body>
+ </html>
